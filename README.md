@@ -16,8 +16,8 @@ If you're on Windows, the Terminal is Git Bash.  This is installed automatically
 ## Base Boxes
 If you know what you're doing, you're probably just looking for the base boxes, here they are:
 
-    * cwdg-base 64-bit https://dl.dropboxusercontent.com/u/7891705/cwdg-base.box
-    * cwdg-base 32-bit https://dl.dropboxusercontent.com/u/7891705/cwdg-base-32bit.box
+* cwdg-base 64-bit https://dl.dropboxusercontent.com/u/7891705/cwdg-base.box
+* cwdg-base 32-bit https://dl.dropboxusercontent.com/u/7891705/cwdg-base-32bit.box
 
 You must make sure your processor's virtualization extensions are enabled in order to use the 64 bit box with VirtualBox.
 
@@ -81,10 +81,10 @@ vagrant up
 
 These commands do the following:
 
-    1. Make a new directory at ~/cwdg (~ is shorthand for your home directory).
-    2. Change the working directory to the newly created directory.
-    3. Add a Vagrantfile to the current directory that specifies the base box to use for our new VM.  In this case it is the cwdg-base box we imported earlier.
-    4. Start the virtual machine. Since this is the first time running the VM it will create it and then start it.
+1. Make a new directory at ~/cwdg (~ is shorthand for your home directory).
+2. Change the working directory to the newly created directory.
+3. Add a Vagrantfile to the current directory that specifies the base box to use for our new VM.  In this case it is the cwdg-base box we imported earlier.
+4. Start the virtual machine. Since this is the first time running the VM it will create it and then start it.
 
 ### SSH into the running VM
 

@@ -99,6 +99,21 @@ And you will connect to your virtual machine.  You now have access to a Linux ma
 When you're done working in your VM, type <code>exit</code> to close the SSH connection and return to your computer's terminal, exactly how you would if you were
 sshing into a remote server.
 
+### Shared Folders
+
+By default, there is a shared folder setup that links <code>/vagrant</code> on the guest to the current working directory on the host.  This is the directory you ran the <code>vagrant up</code>
+command inside of earlier.  If you are following the guide, the is the <code>~/cwdg</code> directory.  Anything you place in this directory will be accessible from the virtual 
+machine, and vice versa.
+
+This is how we will be running most projects.  When you ssh into the guest machine, you should run any setup commands (such as <code>rails new</code>) from the /vagrant directory. 
+This will allow you to edit the commands using your favorite editor in the host machine.  Thus the work flow will be:
+
+1. SSH into the VM using <code>vagrant ssh</code>
+2. Go to the /vagrant directory using <code>cd /vagrant</code>
+3. Create your project. Ex: <code>rails new demo</code>
+4. In the host machine, edit the files using your favorite editor. They are located in the same directory as the Vagrantfile, most likely <code>~/cwdg</code>.
+5. Run the project from inside the guest VM.  Ex: <code>rails server</code>
+
 ### Shutting down the VM
 
 Just because you closed the SSH connection doesn't mean you're done.  The VM is still running in the background.  To shut it down, run:
@@ -110,5 +125,4 @@ vagrant halt
 This will shutdown the VM.  Now you're done.
 
 You can also use <code>vagrant reload</code> to restart the virtual machine.  This may be necessary after installing updates or making configuration changes in the Vagrantfile.
-
 

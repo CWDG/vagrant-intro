@@ -114,6 +114,18 @@ This will allow you to edit the commands using your favorite editor in the host 
 4. In the host machine, edit the files using your favorite editor. They are located in the same directory as the Vagrantfile, most likely <code>~/cwdg</code>.
 5. Run the project from inside the guest VM.  Ex: <code>rails server</code>
 
+### Networking
+Vagrant also allows you to manage networks.  There are several different types of networks that can be used including bridged, NAT, and host-only/private.  
+One simple way to get started with networking is by using port forwarding.  Port forwarding allows us to forward traffic between ports on the host and guest machine.  One good use
+for this is to allow you to run Rails applications on the VM but view them in your host's browser.  To do this we need to forward traffic on port 3000 on the guest to a port on
+the host.  For simplicity, we will forward traffic from guest port 3000 to host port 3000.  Add a line to the Vagrantfile that looks like this:
+
+```
+config.vm.network :forwarded_port, guest: 3000, host: 3000
+```
+
+Then you can run <code>rails server</code> from the VM and view your application on your host's browser at http://localhost:3000/
+
 ### Shutting down the VM
 
 Just because you closed the SSH connection doesn't mean you're done.  The VM is still running in the background.  To shut it down, run:
